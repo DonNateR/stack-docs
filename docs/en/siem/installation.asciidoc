@@ -16,9 +16,19 @@ There are some additional requirements for using the
 You can skip installing {es} and {kib} by using our
 https://www.elastic.co/cloud/elasticsearch-service[hosted {es} Service] on
 Elastic Cloud. The {es} Service is available on both AWS and GCP.
-https://www.elastic.co/cloud/elasticsearch-service/signup[Try the {es}
+{ess-trial}[Try the {es}
 Service for free].
 ==============
+
+For information on how to perform cross-cluster searches on {siem-soln}
+indices, see:
+
+* {ref}/modules-cross-cluster-search.html[Search across cluster]
+(for on-premises {stack} deployments)
+* {cloud}/ec-enable-ccs.html[Enable cross-cluster search] (for hosted deployments)
+
+[float]
+=== Ingest data
 
 To ingest data, you can use:
 
@@ -87,10 +97,10 @@ learn how to configure inputs.
 * *Packetbeat.* See {packetbeat-ref}/packetbeat-getting-started.html[{packetbeat} getting started].
 
 [float]
-=== Enable modules and configuration options
+==== Enable modules and configuration options
 
-For either approach, you need to enable modules in {auditbeat} and {filebeat}
-to populate the {SIEM-app} with data.
+No matter how you installed {beats}, you need to enable modules in {auditbeat}
+and {filebeat} to populate the {SIEM-app} with data.
 
 To populate *Hosts* data, enable these {auditbeat} modules:
 

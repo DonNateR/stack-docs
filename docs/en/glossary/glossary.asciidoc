@@ -52,6 +52,24 @@ necessary to perform an analytics task. See
 +
 //Source: X-Pack
 endif::xpack-terms[]
+ifdef::elasticsearch-terms[]
+
+[[glossary-api-key]] API key ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=api-key-def]
+--
+
+endif::elasticsearch-terms[]
+ifdef::elasticsearch-terms[]
+
+[[glossary-auto-follow-pattern]] auto-follow pattern ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=auto-follow-pattern-def]
+--
+
+endif::elasticsearch-terms[]
 ifdef::cloud-terms[]
 [[glossary-zone]] availability zone ::
 
@@ -76,14 +94,14 @@ ifdef::xpack-terms[]
 
 [[glossary-ml-bucket]] bucket ::
 
-The {ml-features} use the concept of a bucket to divide the time
-series into batches for processing. The _bucket span_ is part of the
-configuration information for {anomaly-jobs}. It defines the time interval that is used
-to summarize and model the data. This is typically between 5 minutes to 1 hour
-and it depends on your data characteristics. When you set the bucket span,
-take into account the granularity at which you want to analyze, the frequency
-of the input data, the typical duration of the anomalies, and the frequency at
-which alerting is required.
+The {ml-features} use the concept of a bucket to divide the time series into
+batches for processing. The _bucket span_ is part of the configuration
+information for {anomaly-jobs}. It defines the time interval that is used to
+summarize and model the data. This is typically between 5 minutes to 1 hour and
+it depends on your data characteristics. When you set the bucket span, take into
+account the granularity at which you want to analyze, the frequency of the input
+data, the typical duration of the anomalies, and the frequency at which alerting
+is required.
 +
 //Source: X-Pack
 endif::xpack-terms[]
@@ -126,6 +144,15 @@ json, msgpack, and plain (text).
 +
 //Source: Logstash
 endif::logstash-terms[]
+ifdef::xpack-terms[]
+
+[[glossary-cold-phase]] cold phase ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=cold-phase-def]
+--
+
+endif::xpack-terms[]
 ifdef::logstash-terms[]
 
 [[glossary-conditional]] conditional ::
@@ -191,9 +218,9 @@ ifdef::xpack-terms[]
 
 [[glossary-ml-datafeed]] datafeed ::
 
-{anomaly-jobs-cap} can analyze either a one-off batch of data or
-continuously in real time. {dfeeds-cap} retrieve data from {es} for analysis.
-Alternatively you can post data from any source directly to a {ml} API.
+{anomaly-jobs-cap} can analyze either a one-off batch of data or continuously in
+real time. {dfeeds-cap} retrieve data from {es} for analysis. Alternatively, you
+can post data from any source directly to a {ml} API.
 +
 //Source: X-Pack
 endif::xpack-terms[]
@@ -208,13 +235,21 @@ outcome in a destination index. See
 //Source: X-Pack
 endif::xpack-terms[]
 ifdef::xpack-terms[]
+[[glossary-delete-phase]] delete phase ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=delete-phase-def]
+--
+
+endif::xpack-terms[]
+ifdef::xpack-terms[]
 
 [[glossary-ml-detector]] detector ::
 
 As part of the configuration information that is associated with {anomaly-jobs},
-detectors define the type of analysis that needs to be done. They
-also specify which fields to analyze. You can have more than one detector in a
-job, which is more efficient than running multiple jobs against the same data.
+detectors define the type of analysis that needs to be done. They also specify
+which fields to analyze. You can have more than one detector in a job, which is
+more efficient than running multiple jobs against the same data.
 +
 //Source: X-Pack
 endif::xpack-terms[]
@@ -330,14 +365,31 @@ grok, mutate, drop, clone, and geoip. Filter stages are optional.
 +
 //Source: Logstash
 endif::logstash-terms[]
-ifdef::xpack-terms[]
+ifdef::elasticsearch-terms[]
+[[glossary-flush]] flush ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=flush-def]
+--
+
+endif::elasticsearch-terms[]
+ifdef::elasticsearch-terms[]
 [[glossary-follower-index]] follower index ::  
 +
 --
 include::{es-repo-dir}/glossary.asciidoc[tag=follower-index-def]
 --
 
-endif::xpack-terms[]
+endif::elasticsearch-terms[]
+ifdef::elasticsearch-terms[]
+[[glossary-frozen-index]] frozen index ::  
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=frozen-index-def]
+--
+
+endif::elasticsearch-terms[]
+
 ifdef::logstash-terms[]
 
 [[glossary-gem]] gem ::
@@ -349,6 +401,14 @@ packaged as Ruby Gems. You can use the Logstash
 +
 //Source: Logstash
 endif::logstash-terms[]
+ifdef::xpack-terms[]
+[[glossary-hot-phase]] hot phase ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=hot-phase-def]
+--
+
+endif::xpack-terms[]
 ifdef::logstash-terms[]
 
 [[glossary-hot-thread]] hot thread ::
@@ -385,6 +445,30 @@ include::{es-repo-dir}/glossary.asciidoc[tag=index-alias-def]
 --
 
 endif::elasticsearch-terms[]
+ifdef::xpack-terms[]
+[[glossary-index-lifecycle]] index lifecycle ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=index-lifecycle-def]
+--
+
+endif::xpack-terms[]
+ifdef::xpack-terms[]
+[[glossary-index-lifecycle-policy]] index lifecycle policy ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=index-lifecycle-policy-def]
+--
+
+endif::xpack-terms[]
+ifdef::elasticsearch-terms[]
+[[glossary-index-pattern]] index pattern ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=index-pattern-def]
+--
+
+endif::elasticsearch-terms[]
 ifdef::logstash-terms[]
 
 [[glossary-indexer]] indexer ::
@@ -394,6 +478,15 @@ order to index <<glossary-event,event>> data.
 +
 //Source: Logstash
 endif::logstash-terms[]
+ifdef::xpack-terms[]
+[[glossary-influencer]] influencer ::
+
+Influencers are entities that might have contributed to an anomaly in a specific
+bucket in an {anomaly-job}. For more information, see
+{ml-docs}/ml-influencers.html[Influencers].
++
+//Source: X-Pack
+endif::xpack-terms[]
 ifdef::logstash-terms[]
 
 [[glossary-input-plugin]] input plugin ::
@@ -424,6 +517,14 @@ include::{es-repo-dir}/glossary.asciidoc[tag=leader-index-def]
 --
 
 endif::xpack-terms[]
+ifdef::elasticsearch-terms[]
+[[glossary-local-cluster]] local cluster ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=local-cluster-def]
+--
+
+endif::elasticsearch-terms[]
 ifdef::xpack-terms[]
 
 [[glossary-ml-nodes]]
@@ -585,6 +686,14 @@ include::{es-repo-dir}/glossary.asciidoc[tag=reindex-def]
 --
 
 endif::elasticsearch-terms[]
+ifdef::xpack-terms[]
+[[glossary-remote-cluster]] remote cluster ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=remote-cluster-def]
+--
+
+endif::xpack-terms[]
 ifdef::elasticsearch-terms[]
 
 [[glossary-replica-shard]] replica shard ::
@@ -606,13 +715,28 @@ by making sure that only authorized hosts become part of the installation.
 //Source: Cloud
 endif::cloud-terms[]
 ifdef::xpack-terms[]
+[[glossary-rollup]] rollup ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=rollup-def]
+--
+
+endif::xpack-terms[]
+ifdef::xpack-terms[]
+[[glossary-rollup-index]] rollup index ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=rollup-index-def]
+--
+
+endif::xpack-terms[]
+ifdef::xpack-terms[]
 
 [[glossary-rollup-job]] {rollup-job}::
-
-A {rollup-job} contains all the details about how the job should run, when it
-indexes documents, and what future queries will be able to execute against the
-rollup index. See {ref}/xpack-rollup.html[Rolling up historical data].
-//Source: X-Pack
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=rollup-job-def]
+--
 endif::xpack-terms[]
 ifdef::elasticsearch-terms[]
 
@@ -670,6 +794,33 @@ include::{es-repo-dir}/glossary.asciidoc[tag=shrink-def]
 endif::elasticsearch-terms[]
 ifdef::elasticsearch-terms[]
 
+[[glossary-snapshot]] snapshot ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=snapshot-def]
+--
+
+endif::elasticsearch-terms[]
+ifdef::xpack-terms[]
+
+[[glossary-snapshot-lifecycle-policy]] snapshot lifecycle policy ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=snapshot-lifecycle-policy-def]
+--
+
+endif::xpack-terms[]
+ifdef::elasticsearch-terms[]
+
+[[glossary-snapshot-repository]] snapshot repository::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=snapshot-repository-def]
+--
+
+endif::elasticsearch-terms[]
+ifdef::elasticsearch-terms[]
+
 [[glossary-source_field]] source field ::
 +
 --
@@ -721,6 +872,15 @@ include::{es-repo-dir}/glossary.asciidoc[tag=type-def]
 --
 
 endif::elasticsearch-terms[]
+ifdef::xpack-terms[]
+
+[[glossary-warm-phase]] warm phase ::
++
+--
+include::{es-repo-dir}/glossary.asciidoc[tag=warm-phase-def]
+--
+
+endif::xpack-terms[]
 ifdef::logstash-terms[]
 
 [[glossary-worker]] worker ::

@@ -100,7 +100,7 @@ POST _ingest/pipeline/_simulate
                      "num_top_classes":5 <2>
                   }
                },
-               "field_mappings":{
+               "field_map":{
 
                }
             }
@@ -119,8 +119,8 @@ POST _ingest/pipeline/_simulate
 //NOTCONSOLE
 
 <1> The ID of the {lang-ident} trained model.
-<2> Indicates that only the top five languages (that is to say, the ones with the highest probability) are returned.
-are reported. In this example, 5 classes (in this case, languages) with the 
+<2> Indicates that only the top five languages (that is to say, the ones with the highest probability) are reported.
+In this example, 5 classes (in this case, languages) with the 
 highest probability will be reported.
 <3> The source object that contains the text to identify.
 
@@ -182,8 +182,7 @@ The request returns the following response:
 ----------------------------------
 //NOTCONSOLE
 
-<1> Contains probability scores for the top (most probable) inferred languages.
-probable languages. The number of reported languages is defined by 
+<1> Contains scores for the most probable languages. The number of reported languages is defined by 
 `num_top_classes`.
 <2> The predicted value is the ISO identifier of the language with the highest 
 probability.
